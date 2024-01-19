@@ -31,7 +31,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#"><%=news%></a></li>
-                        <li><a class="dropdown-item" href="#"><%=categories%></a></li>
+                        <li><a class="dropdown-item" href="create_category"><%=categories%></a></li>
                     </ul>
                 </li>
             </ul>
@@ -43,7 +43,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#"><%=news%></a></li>
-                        <li><a class="dropdown-item" href="#"><%=categories%></a></li>
+                        <li><a class="dropdown-item" href="update_category"><%=categories%></a></li>
                     </ul>
                 </li>
             </ul>
@@ -55,7 +55,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#"><%=news%></a></li>
-                        <li><a class="dropdown-item" href="#"><%=categories%></a></li>
+                        <li><a class="dropdown-item" href="delete_category"><%=categories%></a></li>
                     </ul>
                 </li>
             </ul>

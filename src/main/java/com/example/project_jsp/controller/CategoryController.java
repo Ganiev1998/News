@@ -20,8 +20,8 @@ public class CategoryController {
         mv.addObject("category",categoryService.selectAll());
         return mv;
     }
-    @PostMapping("/create_category")
-    public String insert(){ return "category/insert_cotegory";}
+    @RequestMapping("/create_category")
+    public String insert(){ return "category/insert_category";}
     @RequestMapping("/insert_category")
     public ModelAndView create(@RequestParam("name")String name){
         categoryService.insert(new Category(name));
@@ -29,7 +29,7 @@ public class CategoryController {
     }
     @RequestMapping("/update_category")
     public ModelAndView update(){
-        ModelAndView mv = new ModelAndView("/category/update_cotegory");
+        ModelAndView mv = new ModelAndView("/category/update_category");
         mv.addObject("category",categoryService.selectAll());
         return mv;
     }
@@ -42,7 +42,8 @@ public class CategoryController {
     @RequestMapping("/update_category3/{id}")
     public ModelAndView update3(@PathVariable("id")Integer id, @RequestParam("name")String name){
         categoryService.update(id,new Category(name));
-        return update();
+        ModelAndView mv = new ModelAndView("redirect:/update_category");
+        return mv;
     }
     @RequestMapping("/delete_category")
     public ModelAndView delete(){
@@ -50,8 +51,14 @@ public class CategoryController {
         mv.addObject("category",categoryService.selectAll());
         return mv;
     }
+//    @RequestMapping("delete_category2/{id}")
+//    public ModelAndView delete2(@PathVariable("id")Integer id){
+//        ModelAndView mv = new ModelAndView("/category/delete_category2");
+//        //mv.addObject("id",id);
+//        return mv;
+//    }
     @RequestMapping("/delete_category2/{id}")
-    public ModelAndView delete2(@PathVariable("id")Integer id){
+    public ModelAndView delete3(@PathVariable("id")Integer id){
         categoryService.delete(id);
         return delete();
     }
